@@ -8,3 +8,6 @@ class Participant(models.Model):
     # still more to come.
     def __str__(self):
         return self.name
+
+#class File(models.Model):
+#    file = models.ImageField(upload_to = 'files')
