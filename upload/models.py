@@ -6,3 +6,5 @@ class Participant(models.Model):
     name = models.CharField(max_length=256)
     org_name = models.CharField(max_length=256)
     # still more to come.
+    def __str__(self):
+        return self.name
