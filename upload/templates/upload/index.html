@@ -7,8 +7,22 @@
     <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
 <body>
-<h1 class="text-center"> Accelerating Symposium 2018 </h1>
-	<div class="col-lg-12">
+	<div class="container">
+        <div class="row">
+            <h1 class="text-center"> Accelerating Symposium 2018 </h1>
+            <div class="col-sm-6">
+                <!-- <p>Upload the excel file</p> -->
+        <form name="form" enctype="multipart/form-data"
+                          action="{% url 'index' %}"
+                          method="POST">
+            {% csrf_token %}
+            <input type="file" placeholder="Excel File" name="file" />
+            <br>
+            <br>
+            <input type="submit" value="Submit" />
+        </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/static/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="container">
+        <div class="row">
+            <h1 class="text-center"> Accelerating Symposium 2018 </h1>
+            <div class="col-sm-6">
+                <!-- <p>Upload the excel file</p> -->
+                {% if error %}
+                    <p>In-valid Excel File uploaded</p>
+                {% endif %}
+                {% if not error %}
+                    <p>Valid Excel File uploaded</p>
+                {% endif %}
+                <!-- -->
+                {% if list_of_rows != None %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Registered Number</th>
+                                <th>Participant Name</th>
+                                <th>Organisation Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in list_of_rows %}
+                                <tr>
+                                    <td>{{ item.reg_number }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.org }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
