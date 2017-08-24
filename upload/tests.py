@@ -38,5 +38,5 @@ class SimpleTest(TestCase):
 
         f = SimpleUploadedFile("file.xls", output.read())
         response = self.client.post(url, {'file':f})
-        self.assertContains(response, '<p>Valid Excel File uploaded</p>', status_code=200)
+        self.assertContains(response, '<p>Valid Excel File uploaded</p>', status_code=302)
         

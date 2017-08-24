@@ -21,6 +21,32 @@
             <br>
             <input type="submit" value="Submit" />
         </form>
+                {% if valid %}
+                    <p>Valid Excel File uploaded</p>
+                    {% else %}
+                    <p>In-valid Excel File uploaded</p>
+                {% endif %}
+                <!-- -->
+                {% if items != None %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Registered Number</th>
+                                <th>Participant Name</th>
+                                <th>Organisation Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                                <tr>
+                                    <td>{{ item.reg_number }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.org_name }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
             </div>
         </div>
     </div>
