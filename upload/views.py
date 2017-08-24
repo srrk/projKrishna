@@ -8,7 +8,6 @@ from .utils import process_xl_file
 
 def index(request):
 
-
     if request.method == "POST":
         # Get the file.
         xl_file = request.FILES['file']
