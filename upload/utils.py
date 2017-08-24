@@ -24,4 +24,3 @@ def process_xl_file(workbook):
         else:
             continue
     return list_of_rows
-
